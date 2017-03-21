@@ -2,6 +2,21 @@
 // Grid Container
 // ==========================================================================
 
+.wrapper{
+	width: 100%;
+	overflow-x: hidden;
+}
+.sidebar{
+	width: 100px;
+	position: absolute;
+}
+.content{
+	min-height: 568px;
+	background-color: #eeeeee;
+	margin-left: 100px;
+	position: relative;
+}
+
 .grid {
 	@extend %clearfix;
 	@extend .centered;

@@ -10,6 +10,43 @@
 
 // UI
 
+.icon {
+	display: block;
+	text-align: center;
+	vertical-align: top;
+	color: #abb7b7;
+	@include e(item){
+		font-family: "Flaticon";
+		font-size: em(20px);
+		line-height: 1;
+		a{
+			display: inline-block;
+			padding: em(16px);
+			width: 100%;
+		}
+		@include m(current) {
+			padding: em(16px);
+			font-family: "Flaticon";
+			font-size: em(20px);
+			line-height: 1;
+			a{
+				color: #d47500;
+				display: inline-block;
+				padding: em(16px);
+				width: 100%;
+			}
+		}
+	};
+}
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+	font-family: Flaticon;
+	font-size: 22px;
+	font-style: normal;
+}
+
 .icn {
 
 	// Nav Toggle
@@ -29,7 +66,7 @@
 	// Close
 	@include m(close) {
 		@extend %icn--ui;
-		@include img-replace("icn-close.svg", 20px, 20px); 
+		@include img-replace("icn-close.svg", 20px, 20px);
 		position: absolute;
 		right: 4%;
 		top: 4%;

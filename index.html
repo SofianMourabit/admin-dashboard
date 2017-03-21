@@ -8,80 +8,29 @@
 </head>
 <body>
   <div class="wrapper">
-    <nav class="navbar" role="navigation">
-      <ul class="nav is-collapsed-mobile">
-        <li class="nav__item--current"><a href="#nav">Navigation</a></li>
-        <li class="nav__item"><a href="#type">Typography</a></li>
-        <li class="nav__item"><a href="#buttons">Buttons</a></li>
-        <li class="nav__item"><a href="#forms">Form</a></li>
+    <nav class="sidebar">
+      <div class="logo">
+        <img src="img/logo.png" alt="fox logo"/>
+      </div>
+      <ul class="icon">
+        <li class="icon__item--current"><a href="#"><i class="flaticon-app"></i></a></li>
+        <li class="icon__item"><a href="#"><i class="flaticon-smartphone-7"></i></a></li>
+        <li class="icon__item"><a href="#"><i class="flaticon-fingerprint"></i></a></li>
+        <li class="icon__item"><a href="#"><i class="flaticon-controls-1"></i></a></li>
       </ul>
     </nav>
-    <div class="grid">
-      <header class="grid__col--12 panel--padded--centered" role="banner">
-        <span id="toggle" class="icn--nav-toggle is-displayed-mobile">
-          <b class="srt">Toggle</b>
-        </span>
-        <nav class="navbar" role="navigation">
-          <form class="form">
-            <label class="form__label--hidden" for="search">Search</label>
-            <input class="form__input" type="text" id="search" placeholder="type in text">
-          </form>
-          <ul class="nav is-collapsed-mobile">
-            <li class="nav__item"><a href="#type">Notifications</a></li>
-            <li class="nav__item"><a href="#buttons">Sofian Mourabit</a></li>
-            <li class="nav__item"><a href="#forms">Logout</a></li>
-          </ul>
-        </nav>
-        <div class="grid__col--12">
-          <img class="img--hero" src="img/hero.jpg" alt="Poly - A simple UI Kit">
-        </div>
-      </header>
-    </div>
-
-
-
-
-    <div class="grid">
-      <div class="grid__col--6">
-        <h4 id="forms" class="grid">Message User</h4>
-        <form class="form">
-          <label class="form__label--hidden" for="name">Search for user</label>
-          <input class="form__input" type="text" id="name" placeholder="Search for user">
-
-          <label class="form__label--hidden" for="msg">Message:</label>
-          <textarea class="form__input" id="msg" placeholder="Message..." rows="7"></textarea>
-
-          <input class="btn--default" type="submit" value="Send">
+    <header class="header">
+      <nav class="navbar">
+        <form action="#" method="POST" class="form">
+          <input type="text" placeholder="Type in here..." class="form-input" name="top-search" id="top-search">
         </form>
-      </div>
+      </nav>
+    </header>
+    <main class="content">
+      <div class="grid">
 
-      <div class="grid__col--6">        
-        <h4 id="forms" class="grid">Settings</h4>
-        <img class="img--avatar" src="img/avatar.png" alt="Avatar">
-        <form>
-          <label class="form__label--hidden" for="username">Username:</label>
-          <input class="form__input" type="text" id="username" placeholder="Username">
-          <label class="form__label--hidden" for="password">Password:</label>
-          <input class="form__input" type="password" id="password" placeholder="Password">
-          <input class="form__btn" type="submit" value="Login">
-        </form>
       </div>
-    </div>
-
-    <div class="grid">
-      <footer class="grid__col--12 panel--padded--centered" role="contentinfo">
-        <a class="site-logo" href="#">
-          <b class="srt">Poly - UI Toolkit</b>
-        </a>
-      </footer>
-    </div>
+    </main>
   </div>
-
-  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script>
-  $('#toggle').click(function() {
-    $(this).next('.nav').toggleClass("is-collapsed-mobile");
-  });
-  </script>
 </body>
 </html>

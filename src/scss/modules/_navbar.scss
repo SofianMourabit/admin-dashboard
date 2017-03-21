@@ -2,10 +2,9 @@
 // Navbar
 // ==========================================================================
 
-.navbar {	
+.navbar {
 	position: relative;
-	@include mq(medium) { 
-		margin-top: em(54px);
+	@include mq(medium) {
 		margin-bottom: 0;
 	}
 }
