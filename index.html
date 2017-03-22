@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/application.css">
   <link rel="shortcut icon" href="img/favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
     <nav class="sidebar">
-      <div class="logo">
+      <div class="img--logo" >
         <img src="img/logo.png" alt="fox logo"/>
       </div>
       <ul class="icon">
         <li class="icon__item--current"><a href="#"><i class="flaticon-app"></i></a></li>
-        <li class="icon__item"><a href="#"><i class="flaticon-smartphone-7"></i></a></li>
+        <li class="icon__item"><a href="#"><i class="flaticon-worldwide"></i></a></li>
         <li class="icon__item"><a href="#"><i class="flaticon-fingerprint"></i></a></li>
         <li class="icon__item"><a href="#"><i class="flaticon-controls-1"></i></a></li>
       </ul>
@@ -22,15 +23,95 @@
     <header class="header">
       <nav class="navbar">
         <form action="#" method="POST" class="form">
-          <input type="text" placeholder="Type in here..." class="form-input" name="top-search" id="top-search">
+          <input type="text" placeholder="Type in here..." class="form__input" name="top-search" id="top-search">
         </form>
-      </nav>
-    </header>
-    <main class="content">
-      <div class="grid">
-
+        <ul class="navbar--right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" aria-expanded="false">
+              <svg class="icon__svg--notification" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" height="28px" width="24px">
+              <path d="M43.5,19c-4.971,0-9-4.029-9-9c0-0.688,0.084-1.356,0.231-2H4.735C2.396,8,0.5,9.896,0.5,12.235
+              v37.53C0.5,52.104,2.396,54,4.735,54h37.53c2.339,0,4.235-1.896,4.235-4.235V18.477C45.56,18.81,44.554,19,43.5,19z"/>
+              <circle style="stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" cx="43.5" cy="10" r="9"/>
+            </svg>
+          </a>
+          <ul class="dropdown__menu">
+            <li>
+              <a href="#">
+                <p><i class="flaticon-id-card-4"></i> <strong>15</strong> New User Accounts</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p><i class="flaticon-share-2"></i> <strong>26</strong> New shares</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p><i class="flaticon-server"></i> <strong>1</strong> Server Update</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="img--profile">
+            <img class="img--avatar" src="Img/avatar.png" alt="Sofian Mourabit Avatar"/>
+            <span class="img--text">Sofian Mourabit</span>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" x="0px" y="0px" xml:space="preserve" height="28px" width="24px">
+              <path d="M35.029 6.002C45.414 9.039 53 18.633 53 30c0 13.807-11.193 25-25 25S3 43.807 3 30C3 18.623 10.6 9.021 21 5.993M28 1v25" fill="none" stroke="#38454f" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="content">
+    <div class="grid">
+      <div class="grid__col--12">
+        <div class="panel">
+          <div class="panel__title">
+            <h5 class="panel__title--hdln">Traffic</h5>
+            <div>
+              <a href="#">Hourly</a>
+              <a href="#">Daily</a>
+              <a href="#">Weekly</a>
+              <a href="#">Monthly</a>
+            </div>
+          </div>
+          <div class="panel__content">
+            <canvas id="traffic" width="1200" height="250"></canvas>
+          </div>
+        </div>
       </div>
-    </main>
-  </div>
+    </div>
+    <div class="grid">
+      <div class="grid__col--6">
+        <div class="panel">
+          <div class="panel__title">
+            <h5 class="panel__title--hdln">Daily Traffic</h5>
+          </div>
+          <div class="panel__content">
+            <canvas id="dailyTraffic" width="1200" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="grid__col--6">
+        <div class="panel">
+          <div class="panel__title">
+            <h5 class="panel__title--hdln">Mobile Users</h5>
+          </div>
+          <div class="panel__content">
+            <canvas id="mobileUsers" width="1200" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

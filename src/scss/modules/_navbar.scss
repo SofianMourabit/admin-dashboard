@@ -3,8 +3,14 @@
 // ==========================================================================
 
 .navbar {
-	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 94px;
+	align-items: center;
 	@include mq(medium) {
 		margin-bottom: 0;
+	}
+	@include m(right) {
+		display: flex;
 	}
 }

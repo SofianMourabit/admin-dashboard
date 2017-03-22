@@ -23,6 +23,9 @@
 			display: inline-block;
 			padding: em(16px);
 			width: 100%;
+			&:focus, &:hover{
+				color: #d47500;
+			}
 		}
 		@include m(current) {
 			padding: em(16px);
@@ -36,7 +39,24 @@
 				width: 100%;
 			}
 		}
-	};
+	}
+	@include e(svg){
+    @extend %svg--item;
+		path{
+			stroke-width: 6px;
+			stroke: $color-primary;
+		}
+		@include m(notification) {
+			@extend %svg--item;
+			path{
+				fill: $color-primary;
+			}
+			circle{
+				fill: $color-accent;
+				stroke:#FFFFFF;
+			}
+		}
+	}
 }
 [class^="flaticon-"]:before,
 [class*=" flaticon-"]:before,

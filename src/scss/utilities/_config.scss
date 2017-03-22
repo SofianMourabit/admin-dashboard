@@ -4,9 +4,9 @@
 
 // Font Stacks
 
-$font-url--google        : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
-$font-family--primary    : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro';
+$font-family--primary    : 'Miriam Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Source Sans Pro','Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Font Weights
 
@@ -22,18 +22,19 @@ $white : #fff;
 $black : #0b0b0b;
 $grey  : #797e83;
 
-$fountain-blue  : #52bab3;
+$pickled-bluewood : #2a3d45;
 $emerald        : #5ece7f;
 $sunglo         : #e67478;
 $coral          : #ff784f;
 $purple-majesty : #9279c3;
 $scooter        : #39add1;
+$mango-tango    : #d47500;
 
 // Color Usage
 
-$color-primary   : $fountain-blue;
+$color-primary   : $pickled-bluewood;
 $color-secondary : $scooter;
-$color-accent    : $emerald;
+$color-accent    : $mango-tango;
 $color-shadow    : rgba($black, .2);
 
 // Color Palette Modifiers
@@ -57,7 +58,7 @@ $color-palettes: (
 // UI Colors
 
 $ui-colors: (
-  default : $fountain-blue,
+  default : $pickled-bluewood,
   success : $emerald,
   error   : $sunglo,
   warning : $coral,
@@ -88,7 +89,7 @@ $path--rel      : "../img";
 $g-col-width    : 65px !default;
 $g-gutter-width : 20px !default;
 $g-col-count    : 12 !default;
-$g-cont-max-w   : 1050px !default;
+$g-cont-max-w   : 1200px !default;
 
 // Breakpoints
 

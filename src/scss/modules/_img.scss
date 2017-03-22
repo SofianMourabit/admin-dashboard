@@ -1,26 +1,20 @@
 // ==========================================================================
 // Images
 // ==========================================================================
-.logo {
-    background-color: #c2d5d8;
-}
+
 .img {
-	@include m(wrap) {
-		border: 1px solid palette(grey, x-light);
-		padding: em(12px);
+	@include m(profile) {
+		display: flex;
 	}
 	@include m(avatar) {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
+    height: em(25px);
 		border-radius: $br--round;
-		@include mq(medium) {
-			margin-top: em(24px);
-		}
 	}
-	@include m(hero) {
-		@include mq(medium) {
-			margin-bottom: em(42px);
-		}
+	@include m(logo) {
+    background-color: #c2d5d8;
+	}
+  @include m(text) {
+    margin: em(16px) em(8px);
+    line-height: em(25px);
 	}
 }

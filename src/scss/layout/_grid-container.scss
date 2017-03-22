@@ -7,21 +7,21 @@
 	overflow-x: hidden;
 }
 .sidebar{
-	width: 100px;
+	width: 96px;
 	position: absolute;
 }
 .content{
 	min-height: 568px;
 	background-color: #eeeeee;
-	margin-left: 100px;
+	margin-left: 96px;
 	position: relative;
 }
 
 .grid {
 	@extend %clearfix;
 	@extend .centered;
-	width: 90%;
-
+	width: 95%;
+	padding: em(20px) 0;
 	// Make nested grid container 100%
 	[class*="grid__col--"] > & {
 		width: 100%;
