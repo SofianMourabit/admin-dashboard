@@ -59,6 +59,18 @@
 				stroke:#FFFFFF;
 			}
 		}
+		@include m(facebook) {
+			@extend %svg--item;
+			&:hover{
+					animation: heartbeat 1.5s ease-in-out infinite both;
+			}
+		}
+		@include m(twitter) {
+			@extend %svg--item;
+			&:hover{
+					animation: heartbeat 1.5s ease-in-out infinite both;
+			}
+		}
 	}
 }
 [class^="flaticon-"]:before,

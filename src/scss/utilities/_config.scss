@@ -24,19 +24,20 @@ $black : #0b0b0b;
 $grey  : #797e83;
 
 $pickled-bluewood : #2a3d45;
-$emerald        : #5ece7f;
-$sunglo         : #e67478;
-$coral          : #ff784f;
-$purple-majesty : #9279c3;
-$scooter        : #39add1;
-$mango-tango    : #d47500;
+$jungle-mist      : #c2d5d8;
+$emerald          : #5ece7f;
+$sunglo           : #e67478;
+$coral            : #ff784f;
+$purple-majesty   : #9279c3;
+$scooter          : #39add1;
+$mango-tango      : #d47500;
 
 // Color Usage
 
 $color-primary   : $pickled-bluewood;
-$color-secondary : $scooter;
+$color-secondary : $jungle-mist;
 $color-accent    : $mango-tango;
-$color-shadow    : rgba($black, .2);
+$color-shadow    : rgba($grey, .2);
 
 // Color Palette Modifiers
 

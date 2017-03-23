@@ -33,9 +33,12 @@
 		justify-content: space-between;
 		@include m(hdln){
 			margin: 0;
+			letter-spacing: 1px;
+			text-transform: uppercase;
 		}
 	}
 	@include e(content){
+		@extend %clearfix;
 		background-color: #ffffff;
 		padding: 15px 20px 20px 20px;
 		border-color: #e7eaec;

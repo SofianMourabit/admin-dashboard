@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro|Indie+Flower");
-.grid:after {
+.panel__content:after, .grid:after {
   content: "";
   display: table;
   clear: both; }
@@ -1379,7 +1379,7 @@ th {
 body {
   color: #797e83;
   font-size: 16px;
-  font-family: "Miriam Libre", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   background-color: #2A3D45; }
 
@@ -1469,7 +1469,9 @@ footer {
     -ms-flex-pack: justify;
     justify-content: space-between; }
     .panel__title--hdln {
-      margin: 0; }
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase; }
   .panel__content {
     background-color: #ffffff;
     padding: 15px 20px 20px 20px;
@@ -1628,10 +1630,10 @@ h2, .headline-secondary, .headline-secondary--grouped {
   padding-bottom: 1em;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px rgba(11, 11, 11, 0.2);
+  text-shadow: 0 1px rgba(121, 126, 131, 0.2);
   font-size: 1.125em; }
 
-.icon__svg, .icon__svg--notification {
+.icon__svg, .icon__svg--notification, .icon__svg--facebook, .icon__svg--twitter {
   padding: 5px 0;
   margin: .8em 0.5em; }
 
@@ -1780,8 +1782,8 @@ h2, .headline-secondary, .headline-secondary--grouped {
   position: relative;
   padding: 0.625em;
   letter-spacing: 1px;
-  background: #39add1;
-  background: linear-gradient(45deg, rgba(212, 117, 0, 0.8) 0%, #39add1 100%); }
+  background: #c2d5d8;
+  background: linear-gradient(45deg, rgba(212, 117, 0, 0.8) 0%, #c2d5d8 100%); }
 
 .menu {
   margin-top: 1.25em; }
@@ -1874,6 +1876,10 @@ h2, .headline-secondary, .headline-secondary--grouped {
   .icon__svg--notification circle {
     fill: #d47500;
     stroke: #FFFFFF; }
+  .icon__svg--facebook:hover {
+    animation: heartbeat 1.5s ease-in-out infinite both; }
+  .icon__svg--twitter:hover {
+    animation: heartbeat 1.5s ease-in-out infinite both; }
 
 [class^="flaticon-"]:before,
 [class*=" flaticon-"]:before,
@@ -1917,6 +1923,26 @@ h2, .headline-secondary, .headline-secondary--grouped {
 .toast-progress {
   background-color: #d47500;
   opacity: 1; }
+
+.social {
+  background-color: #ebecec;
+  border: 1px solid #d6d7d9;
+  border-radius: 5px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .social__icon {
+    display: inline-block; }
+  .social__content {
+    display: inline-block; }
+    .social__content--heading {
+      color: #4b6a88;
+      margin: 0;
+      line-height: 1.25em; }
+    .social__content--stats {
+      line-height: 1em;
+      font-size: 2.5em; }
 
 @media (min-width: 1px) and (max-width: 768px) {
   .is-displayed-mobile {
