@@ -682,10 +682,10 @@ h2, .headline-secondary, .headline-secondary--grouped {
     right: -10px;
     top: -8px; }
 
-.site-logo {
-  background-image: url("../img/logo.svg");
+.arrow {
+  background-image: url("../img/next.svg");
   background-repeat: no-repeat;
-  width: 115px;
+  width: 45px;
   height: 45px;
   display: inline-block; }
 

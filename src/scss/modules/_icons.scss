@@ -4,8 +4,8 @@
 
 // Logo
 
-.site-logo {
-	@include img-replace("logo.svg", 115px, 45px, inline-block);
+.arrow {
+	@include img-replace("next.svg", 45px, 45px, inline-block);
 }
 
 // UI
