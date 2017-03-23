@@ -4,9 +4,10 @@
 
 // Font Stacks
 
-$font-url--google        : 'https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro';
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro|Indie+Flower';
 $font-family--primary    : 'Miriam Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family--secondary  : 'Source Sans Pro','Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--handwriting  : 'Indie Flower','Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Font Weights
 
@@ -58,6 +59,7 @@ $color-palettes: (
 // UI Colors
 
 $ui-colors: (
+  current : $pickled-bluewood,
   default : $pickled-bluewood,
   success : $emerald,
   error   : $sunglo,

@@ -3,13 +3,25 @@
 // ==========================================================================
 
 .btn {
+  @include e(group){
+    display: flex;
+    flex-direction: row;
+  }
   @include ui-colors($ui-colors);
+  @include e(tab){
+    @include ui-colors($ui-colors);
+    @include m(transparent){
+      color: palette(grey);
+      background-color: transparent;
+      font-weight: bold;
+    }
+  }
 }
 
 [class^="btn--"] {
   @extend %btn;
   @extend %center-align;
-  margin-bottom: em(20px, 14px); 
+  margin-bottom: em(20px, 14px);
   @include mq(small) {
     width: 100%;
   }
@@ -19,4 +31,12 @@
     display: inline-block;
   }
 }
-
+[class^="btn__"] {
+  @extend %btn-tab;
+  @extend %center-align;
+  @include mq(medium) {
+    @include doubly(5px);
+    width: auto;
+    display: inline-block;
+  }
+}

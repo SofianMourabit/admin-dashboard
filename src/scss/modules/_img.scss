@@ -11,6 +11,7 @@
 		border-radius: $br--round;
 	}
 	@include m(logo) {
+		position: relative;
     background-color: #c2d5d8;
 	}
   @include m(text) {

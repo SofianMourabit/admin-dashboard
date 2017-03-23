@@ -13,13 +13,13 @@
 
 	@include e(input) {
 		font-size : em(16px);
-		border-bottom: 2px solid palette(grey, x-light);
+		border-bottom: 2px solid #c2d5d8;
 		color: $color-primary;
 		font-weight: $font-weight--light;
-		letter-spacing: 2px;
+		letter-spacing: 1px;
 		padding: .5em 6em .5em .2em;
 		&:focus {
-			border-color: $color-accent;
+			border-color: $color-primary;
 		}
 	}
 

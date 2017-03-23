@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Miriam+Libre|Source+Sans+Pro|Indie+Flower");
 .grid:after {
   content: "";
   display: table;
@@ -14,10 +14,10 @@
   position: absolute;
   width: 1px; }
 
-[class^="btn--"] {
+[class^="btn--"], [class^="btn__"] {
   text-align: center; }
 
-[class^="progbar__"]:after, .icn--nav-toggle:before {
+[class^="progbar__"]:after {
   display: block;
   content: '';
   position: absolute; }
@@ -1607,6 +1607,21 @@ h2, .headline-secondary, .headline-secondary--grouped {
   .form__btn:active, [class^="btn--"]:active {
     opacity: initial; }
 
+[class^="btn__"] {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875em;
+  font-weight: 400;
+  transition: opacity 0.3s;
+  display: block; }
+  [class^="btn__"]:hover {
+    opacity: .75; }
+  [class^="btn__"]:active {
+    opacity: initial; }
+
 .menu__link, .menu__link--end {
   display: block;
   padding-top: 1em;
@@ -1615,10 +1630,6 @@ h2, .headline-secondary, .headline-secondary--grouped {
   text-align: center;
   text-shadow: 0 1px rgba(11, 11, 11, 0.2);
   font-size: 1.125em; }
-
-.icn--nav-toggle, .icn--close {
-  line-height: 0;
-  cursor: pointer; }
 
 .icon__svg, .icon__svg--notification {
   padding: 5px 0;
@@ -1633,6 +1644,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
   border-radius: 50%; }
 
 .img--logo {
+  position: relative;
   background-color: #c2d5d8; }
 
 .img--text {
@@ -1650,22 +1662,41 @@ h2, .headline-secondary, .headline-secondary--grouped {
     margin-top: 0.41667em;
     margin-bottom: 2.25em; }
 
+.handwriting {
+  font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 51px;
+  left: 17px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #2a3d45;
+  text-shadow: 1px 1px 1px #eee; }
+
 .form__label {
   display: block;
   margin-bottom: 0.625em; }
 
 .form__input {
   font-size: 1em;
-  border-bottom: 2px solid #d6d7d9;
+  border-bottom: 2px solid #c2d5d8;
   color: #2a3d45;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: .5em 6em .5em .2em; }
   .form__input:focus {
-    border-color: #d47500; }
+    border-color: #2a3d45; }
 
 .form__btn {
   background: #2a3d45; }
+
+.btn__group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.btn--current {
+  background-color: #2a3d45; }
 
 .btn--default {
   background-color: #2a3d45; }
@@ -1682,6 +1713,29 @@ h2, .headline-secondary, .headline-secondary--grouped {
 .btn--info {
   background-color: #9279c3; }
 
+.btn__tab--current {
+  background-color: #2a3d45; }
+
+.btn__tab--default {
+  background-color: #2a3d45; }
+
+.btn__tab--success {
+  background-color: #5ece7f; }
+
+.btn__tab--error {
+  background-color: #e67478; }
+
+.btn__tab--warning {
+  background-color: #ff784f; }
+
+.btn__tab--info {
+  background-color: #9279c3; }
+
+.btn__tab--transparent {
+  color: #797e83;
+  background-color: transparent;
+  font-weight: bold; }
+
 [class^="btn--"] {
   margin-bottom: 1.42857em; }
   @media (min-width: 1px) and (max-width: 768px) {
@@ -1693,6 +1747,13 @@ h2, .headline-secondary, .headline-secondary--grouped {
       display: inline-block; }
       [class^="btn--"] + [class^="btn--"] {
         margin-left: 20px; } }
+
+@media (min-width: 769px) {
+  [class^="btn__"] {
+    width: auto;
+    display: inline-block; }
+    [class^="btn__"] + [class^="btn__"] {
+      margin-left: 5px; } }
 
 .navbar {
   display: -ms-flexbox;
@@ -1733,6 +1794,10 @@ h2, .headline-secondary, .headline-secondary--grouped {
   background: #d6d7d9;
   position: relative;
   margin-bottom: 2.875em; }
+  .progbar__status--current {
+    background-color: #2a3d45; }
+    .progbar__status--current:after {
+      background-color: #39535e; }
   .progbar__status--default {
     background-color: #2a3d45; }
     .progbar__status--default:after {
@@ -1778,7 +1843,8 @@ h2, .headline-secondary, .headline-secondary--grouped {
   display: block;
   text-align: center;
   vertical-align: top;
-  color: #abb7b7; }
+  color: #abb7b7;
+  margin-top: 1em; }
   .icon__item {
     font-family: "Flaticon";
     font-size: 1.25em;
@@ -1790,7 +1856,6 @@ h2, .headline-secondary, .headline-secondary--grouped {
       .icon__item a:focus, .icon__item a:hover {
         color: #d47500; }
     .icon__item--current {
-      padding: 1em;
       font-family: "Flaticon";
       font-size: 1.25em;
       line-height: 1; }
@@ -1802,6 +1867,8 @@ h2, .headline-secondary, .headline-secondary--grouped {
   .icon__svg path {
     stroke-width: 6px;
     stroke: #2a3d45; }
+  .icon__svg--notification:hover {
+    animation: heartbeat 1.5s ease-in-out infinite both; }
   .icon__svg--notification path {
     fill: #2a3d45; }
   .icon__svg--notification circle {
@@ -1816,27 +1883,23 @@ h2, .headline-secondary, .headline-secondary--grouped {
   font-size: 22px;
   font-style: normal; }
 
-.icn--nav-toggle {
-  width: 25px;
-  height: 17px;
-  border-top: solid 3px #797e83;
-  border-bottom: solid 3px #797e83;
-  position: relative; }
-  .icn--nav-toggle:before {
-    width: 25px;
-    height: 3px;
-    background: #999da1;
-    top: 4px; }
-
-.icn--close {
-  background-image: url("../img/icn-close.svg");
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  right: 4%;
-  top: 4%; }
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out; }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in; }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out; }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in; }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out; } }
 
 .dropdown {
   position: relative; }
@@ -1844,6 +1907,16 @@ h2, .headline-secondary, .headline-secondary--grouped {
 .dropdown__menu {
   display: none;
   position: absolute; }
+
+.toast-success {
+  background-color: #2a3d45; }
+
+.toast-top-center {
+  top: 10px; }
+
+.toast-progress {
+  background-color: #d47500;
+  opacity: 1; }
 
 @media (min-width: 1px) and (max-width: 768px) {
   .is-displayed-mobile {
