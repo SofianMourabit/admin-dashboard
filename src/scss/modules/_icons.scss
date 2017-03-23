@@ -17,9 +17,6 @@
 	color: #abb7b7;
 	margin-top: em(16px);
 	@include e(item){
-		font-family: "Flaticon";
-		font-size: em(20px);
-		line-height: 1;
 		a{
 			display: inline-block;
 			padding: em(16px);
@@ -29,27 +26,33 @@
 			}
 		}
 		@include m(current) {
-			font-family: "Flaticon";
-			font-size: em(20px);
-			line-height: 1;
+			border-left-color: orange;
+			border-left-width: 3px;
+			border-left-style: solid;
 			a{
-				color: #d47500;
 				display: inline-block;
-				padding: em(16px);
+				padding: em(12px);
 				width: 100%;
+				svg{
+					path{
+						fill: $color-accent;
+					}
+				}
 			}
 		}
 	}
 	@include e(svg){
-    @extend %svg--item;
-		path{
-			stroke-width: 6px;
-			stroke: $color-primary;
+		margin: 1em;
+		&:hover{
+			path{
+				fill: $color-accent;
+			}
 		}
+
 		@include m(notification) {
 			@extend %svg--item;
 			&:hover{
-					animation: heartbeat 1.5s ease-in-out infinite both;
+				animation: heartbeat 1.5s ease-in-out infinite both;
 			}
 			path{
 				fill: $color-primary;
@@ -59,48 +62,34 @@
 				stroke:#FFFFFF;
 			}
 		}
-		@include m(facebook) {
+		@include m(power) {
 			@extend %svg--item;
-			&:hover{
-					animation: heartbeat 1.5s ease-in-out infinite both;
-			}
-		}
-		@include m(twitter) {
-			@extend %svg--item;
-			&:hover{
-					animation: heartbeat 1.5s ease-in-out infinite both;
+			path{
+				stroke-width: 6px;
 			}
 		}
 	}
 }
-[class^="flaticon-"]:before,
-[class*=" flaticon-"]:before,
-[class^="flaticon-"]:after,
-[class*=" flaticon-"]:after {
-	font-family: Flaticon;
-	font-size: 22px;
-	font-style: normal;
-}
 @keyframes heartbeat {
-  from {
-    transform: scale(1);
-    transform-origin: center center;
-    animation-timing-function: ease-out;
-  }
-  10% {
-    transform: scale(0.91);
-    animation-timing-function: ease-in;
-  }
-  17% {
-    transform: scale(0.98);
-    animation-timing-function: ease-out;
-  }
-  33% {
-    transform: scale(0.87);
-    animation-timing-function: ease-in;
-  }
-  45% {
-    transform: scale(1);
-    animation-timing-function: ease-out;
-  }
+	from {
+		transform: scale(1);
+		transform-origin: center center;
+		animation-timing-function: ease-out;
+	}
+	10% {
+		transform: scale(0.91);
+		animation-timing-function: ease-in;
+	}
+	17% {
+		transform: scale(0.98);
+		animation-timing-function: ease-out;
+	}
+	33% {
+		transform: scale(0.87);
+		animation-timing-function: ease-in;
+	}
+	45% {
+		transform: scale(1);
+		animation-timing-function: ease-out;
+	}
 }

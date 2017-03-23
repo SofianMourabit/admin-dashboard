@@ -11,8 +11,17 @@
 		border-radius: $br--round;
 	}
 	@include m(logo) {
+		border-radius: $br--round;
+		max-height: 96px;
+	}
+	@include e(container) {
+    height: 96px;
+    text-align: center;
 		position: relative;
     background-color: #c2d5d8;
+		@include mq(medium) {
+
+		}
 	}
   @include m(text) {
     margin: em(16px) em(8px);

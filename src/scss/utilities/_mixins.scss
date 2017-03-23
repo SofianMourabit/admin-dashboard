@@ -19,12 +19,12 @@
 
 @mixin mq($break) {
   @if $break == "small" {
-    @media (min-width: $brkpoint--sm) and (max-width: $brkpoint--md) {
+    @media (min-width: $brkpoint--sm) {
       @content;
     }
   }
   @else if $break == "medium" {
-    @media (min-width: $brkpoint--md + 1) {
+    @media (min-width: $brkpoint--md) {
       @content;
     }
   }
@@ -49,7 +49,7 @@
       @if $p-el {
         &:after {
           background-color: lighten($color, 8%);
-        } 
+        }
       }
     }
   }
@@ -68,7 +68,7 @@
        height: $el-h;
        @content;
      }
-   } 
+   }
    @else {
      @error "`#{$el}` is not a valid pseudo-element.";
    }
@@ -100,7 +100,7 @@
     $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;
     $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
 
-    // Generate and output the column modifier classes 
+    // Generate and output the column modifier classes
     &--#{$i} {
       width: percentage($target / $context);
     }

@@ -4,6 +4,7 @@
 
 .btn {
   @include e(group){
+    @extend %clearfix;
     display: flex;
     flex-direction: row;
   }

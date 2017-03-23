@@ -6,27 +6,18 @@
 	width: 100%;
 	overflow-x: hidden;
 }
-.sidebar{
-	width: 96px;
-	position: absolute;
-}
-.content{
-	min-height: 568px;
-	background-color: #eeeeee;
-	margin-left: 96px;
-	position: relative;
-}
-
 .grid {
 	@extend %clearfix;
 	@extend .centered;
 	width: 95%;
-	padding: em(20px) 0;
+	padding: 0;
 	// Make nested grid container 100%
 	[class*="grid__col--"] > & {
 		width: 100%;
 	}
-
+	@include mq(medium) {
+		padding-top: em(20px);
+	}
 	// Set max-width for grid container
 	@include mq(large) {
 		max-width: $g-cont-max-w;

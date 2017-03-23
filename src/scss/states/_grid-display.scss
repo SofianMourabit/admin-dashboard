@@ -7,11 +7,11 @@
     display: block;
     @at-root (with: media) {
       .is-hidden-mobile {
-	display: none;
+	       display: none;
       }
     }
   }
-  @include mq(medium) { 
+  @include mq(medium) {
     display: none;
-  }	
+  }
 }

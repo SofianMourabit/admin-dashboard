@@ -1,0 +1,16 @@
+
+.sidebar{
+	width: 100%;
+	@include mq(medium) {
+		width: 96px;
+		position: absolute;
+	}
+}
+.content{
+	background-color: #eeeeee;
+	@include mq(medium) {
+		margin-left: 96px;
+		position: relative;
+		min-height: 568px;
+	}
+}
