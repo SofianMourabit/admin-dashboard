@@ -25,6 +25,7 @@ let dataTraffic = {
     }
   ]
 };
+
 let dataDailyTraffic = {
   labels: ["S", "M", "T", "W", "T", "F", "S"],
   datasets: [
@@ -73,7 +74,7 @@ const lineOptions = {
     yAxes: [{
       ticks: {
         beginAtZero: true,
-        max: 2500
+        max: 2500,
       },
     }]
   }

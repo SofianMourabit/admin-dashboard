@@ -42,7 +42,9 @@
 		}
 	}
 	@include e(svg){
-		margin: 1em;
+		margin: em(16px);
+		width: em(25px);
+		height: em(25px);
 		&:hover{
 			path{
 				fill: $color-accent;
@@ -51,22 +53,21 @@
 
 		@include m(notification) {
 			@extend %svg--item;
+			width: em(32px);
+			height: em(32px);
 			&:hover{
 				animation: heartbeat 1.5s ease-in-out infinite both;
-			}
-			path{
-				fill: $color-primary;
-			}
-			circle{
-				fill: $color-accent;
-				stroke:#FFFFFF;
 			}
 		}
 		@include m(power) {
 			@extend %svg--item;
-			path{
-				stroke-width: 6px;
-			}
+			width: em(32px);
+			height: em(32px);
+		}
+		@include m(social) {
+			@extend %svg--item;
+			width: em(64px);
+			height: em(64px);
 		}
 	}
 }

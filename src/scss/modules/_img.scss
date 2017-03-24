@@ -11,8 +11,7 @@
 		border-radius: $br--round;
 	}
 	@include m(logo) {
-		border-radius: $br--round;
-		max-height: 96px;
+
 	}
 	@include e(container) {
     height: 96px;

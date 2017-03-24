@@ -5,11 +5,10 @@ sass = require('gulp-sass'),
 sourcemaps = require('gulp-sourcemaps'),
 autoprefixer = require('gulp-autoprefixer'),
 jshint = require('gulp-jshint'),
-imagemin = require('gulp-imagemin'),
 notify = require('gulp-notify'),
-cache = require('gulp-cache'),
 server = require('gulp-server-livereload'),
-del = require('del');
+del = require('del'),
+svgSprite = require('gulp-svg-sprite');
 
 // Styles
 gulp.task('styles', function() {
@@ -34,39 +33,67 @@ gulp.task('scripts', function() {
   .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-// Images
+// Images & Icons
+let config = {
+  mode: {
+    symbol: { // symbol mode to build the SVG
+      dest: 'sprite', // destination foldeer
+      sprite: 'sprite.svg', //sprite name
+      example: true // Build sample page
+    }
+  },
+  svg: {
+    xmlDeclaration: false, // strip out the XML attribute
+    doctypeDeclaration: false // don't include the !DOCTYPE declaration
+  }
+};
+gulp.task('sprite-page', function() {
+  return gulp.src('src/images/**/*.svg')
+  .pipe(svgSprite(config))
+  .pipe(gulp.dest('.'))
+  .pipe(notify({ message: 'Sprite page complete' }));
+});
+
+gulp.task('sprite-shortcut', function() {
+  return gulp.src('sprite/sprite.svg')
+  .pipe(gulp.dest('.'));
+});
+
 gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
-  .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+  return gulp.src('src/images/*')
   .pipe(gulp.dest('img'))
   .pipe(notify({ message: 'Images task complete' }));
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del(['css', 'js', 'img']);
+  return del(['css', 'js', 'img','sprite']);
 });
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images');
+  gulp.start('server');
 });
 
 
 // Watch
 gulp.task('watch', function () {
-// Watch .scss files
-gulp.watch('src/scss/**/*.scss', ['styles']);
+  // Watch .scss files
+  gulp.watch('src/scss/**/*.scss', ['styles']);
 
-// Watch .js files
-gulp.watch('src/js/**/*.js', ['scripts']);
+  // Watch .js files
+  gulp.watch('src/js/**/*.js', ['scripts']);
 
-// Watch image files
-gulp.watch('src/images/**/*', ['images']);
+  // Watch image files
+  gulp.watch('src/images/*', ['images']);
+
+  // Watch SVG files
+  gulp.watch('src/images/icons/*', ['sprite-page']);
+
 });
 
 //server
-gulp.task('server',['styles','scripts','images','watch'], function() {
+gulp.task('server',['styles','scripts','images','sprite-page','watch'], function() {
   gulp.src('./')
   .pipe(server({
     defaultFile: 'index.html',

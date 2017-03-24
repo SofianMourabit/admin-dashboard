@@ -475,7 +475,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
   text-shadow: 0 1px rgba(121, 126, 131, 0.2);
   font-size: 1.125em; }
 
-.icon__svg--notification, .icon__svg--power {
+.icon__svg--notification, .icon__svg--power, .icon__svg--social {
   padding: 5px 0;
   margin: .8em 0.5em; }
 
@@ -486,10 +486,6 @@ h2, .headline-secondary, .headline-secondary--grouped {
 .img--avatar {
   height: 1.5625em;
   border-radius: 50%; }
-
-.img--logo {
-  border-radius: 50%;
-  max-height: 96px; }
 
 .img__container {
   height: 96px;
@@ -712,18 +708,22 @@ h2, .headline-secondary, .headline-secondary--grouped {
       .icon__item--current a svg path {
         fill: #d47500; }
   .icon__svg {
-    margin: 1em; }
+    margin: 1em;
+    width: 1.5625em;
+    height: 1.5625em; }
     .icon__svg:hover path {
       fill: #d47500; }
-    .icon__svg--notification:hover {
-      animation: heartbeat 1.5s ease-in-out infinite both; }
-    .icon__svg--notification path {
-      fill: #2a3d45; }
-    .icon__svg--notification circle {
-      fill: #d47500;
-      stroke: #FFFFFF; }
-    .icon__svg--power path {
-      stroke-width: 6px; }
+    .icon__svg--notification {
+      width: 2em;
+      height: 2em; }
+      .icon__svg--notification:hover {
+        animation: heartbeat 1.5s ease-in-out infinite both; }
+    .icon__svg--power {
+      width: 2em;
+      height: 2em; }
+    .icon__svg--social {
+      width: 4em;
+      height: 4em; }
 
 @keyframes heartbeat {
   from {
@@ -744,11 +744,41 @@ h2, .headline-secondary, .headline-secondary--grouped {
     animation-timing-function: ease-out; } }
 
 .dropdown {
-  position: relative; }
+  position: relative;
+  display: inline-block; }
+  .dropdown__content {
+    display: none;
+    position: absolute;
+    min-width: 225px;
+    z-index: 1;
+    background-color: #fff;
+    top: 60px;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0 0.9375em;
+    border: 1px solid #e7eaec;
+    box-shadow: 0 2px 1px 1px #c2d5d8; }
+  .dropdown__link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1em; }
+  .dropdown:before {
+    display: none;
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px 0 0 0;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.08);
+    top: 55px;
+    right: 20px; }
 
-.dropdown__menu {
-  display: none;
-  position: absolute; }
+.dropdown:focus .dropdown__content {
+  display: block; }
 
 .toast-success {
   background-color: #2a3d45; }

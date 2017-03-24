@@ -6,16 +6,25 @@
     display: none;
 }
 .onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 30px; padding: 0; line-height: 30px;
-    border: 0px solid #999999; border-radius: 37px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    border: 0px solid #999999;
+    border-radius: 37px;
     background-color: #EEEEEE;
 }
 .onoffswitch-label:before {
     content: "";
-    display: block; width: 37px; margin: -3.5px;
+    display: block;
+    width: 37px;
+    margin: -3.5px;
     background: #A1A1A1;
-    position: absolute; top: 0; bottom: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     right: 56px;
     border-radius: 37px;
     box-shadow: 0 6px 12px 0px #757575;
