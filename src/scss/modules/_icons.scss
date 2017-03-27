@@ -2,12 +2,6 @@
 // Icons
 // ==========================================================================
 
-// Logo
-
-.arrow {
-	@include img-replace("next.svg", 45px, 45px, inline-block);
-}
-
 // UI
 
 .icon {
@@ -18,39 +12,24 @@
 	margin-top: em(16px);
 	@include e(item){
 		a{
-			display: inline-block;
 			padding: em(16px);
+			display: block;
 			width: 100%;
-			&:focus, &:hover{
-				color: #d47500;
-			}
+			color: #fff;
 		}
-		@include m(current) {
-			border-left-color: orange;
-			border-left-width: 3px;
-			border-left-style: solid;
+		@include m(active) {
+			border-left: 2px solid $color-accent;
+			box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
 			a{
-				display: inline-block;
-				padding: em(12px);
+				padding: em(16px);
+				display: block;
 				width: 100%;
-				svg{
-					path{
-						fill: $color-accent;
-					}
-				}
+				color: $color-accent;
 			}
 		}
 	}
 	@include e(svg){
-		margin: em(16px);
-		width: em(25px);
-		height: em(25px);
-		&:hover{
-			path{
-				fill: $color-accent;
-			}
-		}
-
+		@extend %svg;
 		@include m(notification) {
 			@extend %svg--item;
 			width: em(32px);

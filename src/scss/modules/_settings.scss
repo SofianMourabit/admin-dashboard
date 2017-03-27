@@ -1,0 +1,12 @@
+.setting {
+  @include e(content){
+    display: flex;
+    padding-bottom: 2em;
+    padding-top: .8em;
+    color: $color-primary;
+    align-items: center;
+  }
+}
+.onoffswitch{
+  margin-left: em(16px);
+}

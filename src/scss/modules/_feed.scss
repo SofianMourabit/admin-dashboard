@@ -1,0 +1,16 @@
+.feed {
+  @include e(item){
+    display: flex;
+    align-items: center;
+  }
+  @include e(more){
+    display: flex;
+    justify-content: flex-end;
+    a{
+      color: $color-secondary;
+      &:hover{
+        color: darken($color-secondary, 40%);
+      }
+    }
+  }
+}

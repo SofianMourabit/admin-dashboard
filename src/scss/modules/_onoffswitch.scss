@@ -30,7 +30,7 @@
     box-shadow: 0 6px 12px 0px #757575;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #2A3D45;
+    background-color: $color-primary;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
    border-color: #2A3D45;

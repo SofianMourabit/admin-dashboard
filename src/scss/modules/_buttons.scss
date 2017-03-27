@@ -16,6 +16,9 @@
       background-color: transparent;
       font-weight: bold;
     }
+    @include m(active){
+      box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+    }
   }
 }
 
@@ -23,6 +26,10 @@
   @extend %btn;
   @extend %center-align;
   margin-bottom: em(20px, 14px);
+  margin-top: em(20px, 14px);
+  padding: 15px 30px;
+  border-radius : $br--default;
+  box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
   @include mq(small) {
     width: 100%;
   }
@@ -32,8 +39,10 @@
     display: inline-block;
   }
 }
-[class^="btn__"] {
-  @extend %btn-tab;
+[class^="btn__tab"] {
+  @extend %btn;
+  padding: 5px 10px;
+  border-radius : 50px;
   @extend %center-align;
   @include mq(medium) {
     @include doubly(5px);

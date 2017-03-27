@@ -1,121 +1,80 @@
-// Line Chart
+//
+// Sidebar navigation active
+//
 
-const trafficCanvas = document.getElementById("traffic");
-const dailyTrafficCanvas = document.getElementById("dailyTraffic");
-const mobileUsersCanvas = document.getElementById("mobileUsers");
-let dataTraffic = {
-  labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-  datasets: [
-    {
-      fill: true,
-      lineTension: 0.1,
-      backgroundColor: "rgba(231,110,60,0.4)",
-      borderColor: "rgba(231,110,60,1)",
-      pointBorderColor: "rgba(204,128,61,1)",
-      pointBackgroundColor: "#fff",
-      pointBorderWidth: 1,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(121,126,131,1)",
-      pointHoverBorderColor: "rgba(204,128,61,1)",
-      pointHoverBorderWidth: 2,
-      pointRadius: 5,
-      pointHitRadius: 10,
-      pointStyle: 'circle',
-      data: [0,500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500, 2000]
-    }
-  ]
-};
+'use strict'
+const sidebarWrapper = document.querySelectorAll('#js__sidebar li');
+const dashboardWrapper = document.querySelector('#js__dashboard');
+const membersWrapper = document.querySelector('#js__members');
+const visitsWrapper = document.querySelector('#js__visits');
+const settingsWrapper = document.querySelector('#js__settings');
 
-let dataDailyTraffic = {
-  labels: ["S", "M", "T", "W", "T", "F", "S"],
-  datasets: [
-    {
-      fill: true,
-      borderWidth: 2,
-      backgroundColor: "rgba(194, 213, 216,0.4)",
-      borderColor: "rgba(194, 213, 216,1)",
-      data: [50, 75, 150, 100, 200, 175, 75]
+// Clear previous active and set new element active
+function setActive(newElement){
+  for (let i = 0; i < sidebarWrapper.length; i++) {
+    if(sidebarWrapper[i].classList.contains('icon__item--active')){
+      sidebarWrapper[i].classList.remove('icon__item--active');
+      sidebarWrapper[i].classList.add('icon__item');
     }
-  ]
-};
-let dataMobileUsers = {
-  labels: ["Phones", "Tablets", "Desktop"],
-  datasets: [
-    {
-      data: [23, 26, 76],
-      backgroundColor: [
-        "#d47500",
-        "#c2d5d8",
-        "#2A3D45"
-      ],
-      hoverBackgroundColor: [
-        "#d47500",
-        "#c2d5d8",
-        "#2A3D45"
-      ]
-    }
-  ]
-};
-
-const lineOptions = {
-  responsive: true,
-  legend: {
-    display: false
-  },
-  tooltips: {
-    enabled: false
-  },
-  scales: {
-    xAxes: [{
-      gridLines: {
-        offsetGridLines : true
-      }
-    }],
-    yAxes: [{
-      ticks: {
-        beginAtZero: true,
-        max: 2500,
-      },
-    }]
   }
-};
-const barOptions = {
-  responsive: true,
-  legend: {
-    display: false
-  },
-  tooltips: {
-    enabled: false
-  },
-  scales: {
-    yAxes: [{
-      gridLines: { offsetGridLines: true },
-      ticks: {
-        beginAtZero: true,
-        max: 250
-      }
-    }]
-  }
-};
-const doughnutOptions = {
-  responsive: true,
-  tooltips: {
-    enabled: false
-  },
-};
+  newElement.classList.remove('icon__item');
+  newElement.classList.add('icon__item--active');
+}
 
-let traffic = new Chart(trafficCanvas, {
-  type: 'line',
-  data: dataTraffic,
-  options: lineOptions
+
+// Event Listeners
+dashboardWrapper.addEventListener('click', () =>{
+  if (!dashboardWrapper.classList.contains('icon__item--active')){
+    setActive(dashboardWrapper);
+  }
 });
-let dailyTraffic = new Chart(dailyTrafficCanvas, {
-  type: 'bar',
-  data: dataDailyTraffic,
-  options: barOptions
+membersWrapper.addEventListener('click', () =>{
+  if (!membersWrapper.classList.contains('icon__item--active')){
+    setActive(membersWrapper);
+  }
 });
-let mobileUsers = new Chart(mobileUsersCanvas, {
-  type: 'doughnut',
-  data: dataMobileUsers,
-  options: doughnutOptions
+visitsWrapper.addEventListener('click', () =>{
+  if (!visitsWrapper.classList.contains('icon__item--active')){
+    setActive(visitsWrapper);
+  }
 });
+settingsWrapper.addEventListener('click', () =>{
+  if (!settingsWrapper.classList.contains('icon__item--active')){
+    setActive(settingsWrapper);
+  }
+});
+
+//
+// Notification menu popup
+//
+const notificationLink = document.querySelector('.dropdown > a');
+const notificationWrapper = document.querySelector('.dropdown svg');
+const notificationCount = document.querySelectorAll('.dropdown__content li');
+const notificationsContent = document.querySelector('.dropdown__content');
+const notificationHidden = document.querySelector('.is-hidden');
+
+notificationWrapper.addEventListener('click', ()=>{
+  let display = notificationsContent.style.display;
+  if(display === 'block'){
+    notificationsContent.style.display = 'none';
+  }else{
+    notificationsContent.style.display = 'block';
+  }
+});
+
+// Notification event Listeners
+let i = 1;
+notificationsContent.addEventListener('click', (e)=>{
+  console.log(notificationHidden);
+  let li = e.target.parentElement;
+  if(!(notificationHidden === li)){
+  li.style.display = 'none';
+  }
+  i++;
+  if (notificationCount.length == i){
+    notificationLink.style.color = "#656a6e";
+    notificationsContent.style.display = 'none';
+    notificationHidden.style.display = 'flex';
+
+  }
+})

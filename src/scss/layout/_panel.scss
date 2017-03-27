@@ -19,6 +19,7 @@
 
 .panel{
 	box-shadow: 0 2px 1px 1px #c2d5d8;
+	margin-bottom: 1em;
 	@include e(title){
 		background-color: #ffffff;
 		border-color: #e7eaec;

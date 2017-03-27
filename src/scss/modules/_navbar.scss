@@ -12,5 +12,6 @@
 	}
 	@include m(right) {
 		display: flex;
+		margin-top: em(20px);
 	}
 }

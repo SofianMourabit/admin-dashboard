@@ -7,11 +7,12 @@
 		display: flex;
 	}
 	@include m(avatar) {
-    height: em(25px);
+    height: em(32px);
 		border-radius: $br--round;
 	}
-	@include m(logo) {
-
+	@include m(feed) {
+    height: auto;
+		border-radius: $br--round;
 	}
 	@include e(container) {
     height: 96px;

@@ -17,14 +17,30 @@
 		color: $color-primary;
 		font-weight: $font-weight--light;
 		letter-spacing: 1px;
-		padding: .5em 6em .5em .2em;
+		padding: .5em .6em .5em .2em;
 		&:focus {
 			border-color: $color-primary;
+		}
+		@include m(select){
+			overflow: visible;
+			width: 100%;
+			border-radius: 5px;
+			padding: 11px;
+			background-color: #eff0f1;
+			border: none;
+			color: $color-primary;
+			height: 40px;
+			margin-bottom: em(16px);
+			margin-top: em(18px);
+			font-weight: bold;
 		}
 	}
 
 	@include e(btn) {
 		@extend %btn;
+	  margin-bottom: em(20px, 14px);
+	  margin-top: em(20px, 14px);
+		box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
 		background: $color-primary;
 	}
 }

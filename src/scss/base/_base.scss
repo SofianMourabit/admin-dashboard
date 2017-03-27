@@ -85,7 +85,9 @@ img {
 }
 
 // Form elements
-
+textarea {
+    resize: none;
+}
 input,
 textarea {
 	display: block;

@@ -60,7 +60,7 @@ $color-palettes: (
 // UI Colors
 
 $ui-colors: (
-  current : $pickled-bluewood,
+  active : $pickled-bluewood,
   default : $pickled-bluewood,
   success : $emerald,
   error   : $sunglo,
@@ -81,7 +81,7 @@ $br--round      : 50%;
 
 // Transitions
 
-$trns-duration  : .3s;
+$trns-duration  : .4s;
 
 // Path to Assets
 
