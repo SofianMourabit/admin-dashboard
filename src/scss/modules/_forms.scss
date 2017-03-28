@@ -3,6 +3,7 @@
 // ==========================================================================
 
 .form {
+	position: relative;
 	@include e(label) {
 		@include m(hidden) {
 			@extend .srt;

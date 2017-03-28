@@ -3,6 +3,12 @@
 // ==========================================================================
 
 .img {
+	@include m(logo){
+		width: em(125px);
+		@include mq(medium){
+			width: auto;
+		}
+	}
 	@include m(profile) {
 		display: flex;
 	}

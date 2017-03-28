@@ -1,16 +1,31 @@
 .feed {
+  @include e(image){
+    width: 30%;
+    @include mq(medium){
+      width: 15%;
+    }
+  }
+  @include e(content){
+    width: 70%;
+    @include mq(medium){
+      width: 83%;
+    }
+  }
   @include e(item){
     display: flex;
     align-items: center;
   }
   @include e(more){
-    display: flex;
-    justify-content: flex-end;
+    width: 6.5%;
     a{
       color: $color-secondary;
       &:hover{
         color: darken($color-secondary, 40%);
       }
+    }
+    @include mq(medium){
+        display: flex;
+        justify-content: flex-end;
     }
   }
 }

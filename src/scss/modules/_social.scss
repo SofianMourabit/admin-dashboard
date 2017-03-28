@@ -4,6 +4,10 @@
   border-radius: 5px;
   display:flex;
   align-items:center;
+  margin-bottom: em(16px);
+  @include mq(medium){
+    margin-bottom: 0
+  }
   @include e(icon){
     display: inline-block;
   }

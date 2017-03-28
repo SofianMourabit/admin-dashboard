@@ -4,6 +4,9 @@
   <title>Web App Dashboard</title>
   <link rel="shortcut icon" href="img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/sweetalert.css">
+  <script src="js/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <link rel="stylesheet" href="css/application.css">
 </head>
@@ -67,7 +70,7 @@
                   </svg>
                 </a>
               </li>
-              <li>
+              <li id="js__followers">
                 <a href="#" class="dropdown__link">
                   <span>15 New Followers</span>
                   <svg class="icon__svg">
@@ -75,7 +78,7 @@
                   </svg>
                 </a>
               </li>
-              <li>
+              <li id="js__shares">
                 <a href="#" class="dropdown__link">
                   <span>26 New shares</span>
                   <svg class="icon__svg">
@@ -83,7 +86,7 @@
                   </svg>
                 </a>
               </li>
-              <li>
+              <li id="js__server">
                 <a href="#" class="dropdown__link">
                   <span>1 Server Update</span>
                   <svg class="icon__svg">
@@ -227,12 +230,13 @@
             <div class="panel__content">
               <form class="form">
                 <label class="form__label--hidden" for="name">Name:</label>
-                <input class="form__input" type="text" id="name" placeholder="Search for User">
+                <input class="form__input" type="text" id="name" placeholder="Search for User" required>
 
                 <label class="form__label--hidden" for="msg">Message:</label>
-                <textarea class="form__input" id="msg" placeholder="Message for User" rows="7"></textarea>
+                <textarea class="form__input" id="msg" placeholder="Message for User" rows="7" required></textarea>
 
-                <input class="form__btn" type="submit" value="Send">
+                <input class="form__btn" type="submit" value="Send" id="js__send">
+                <div id="js__autocomplete" class="autocomplete"></div>
               </form>
             </div>
           </div>
@@ -247,14 +251,14 @@
                 <div class="setting__content">
                   <strong class="grid__col--6">Send Email Notification</strong>
                   <div class="onoffswitch grid__col--6">
-                    <input type="checkbox" name="emailNotification" class="onoffswitch-checkbox" id="emailNotification" checked>
+                    <input type="checkbox" name="emailNotification" class="onoffswitch-checkbox" id="emailNotification">
                     <label class="onoffswitch-label" for="emailNotification"></label>
                   </div>
                 </div>
                 <div class="setting__content">
                   <strong class="grid__col--6">Set Profile to Public</strong>
                   <div class="onoffswitch grid__col--6">
-                    <input type="checkbox" name="publicProfile" class="onoffswitch-checkbox" id="publicProfile" checked>
+                    <input type="checkbox" name="publicProfile" class="onoffswitch-checkbox" id="publicProfile">
                     <label class="onoffswitch-label" for="publicProfile"></label>
                   </div>
                 </div>

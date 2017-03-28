@@ -14,6 +14,7 @@
 
 [class^="grid__col--"] {
 	@include mq(small)  {
+		
 	}
 	@include mq(medium) {
 		@include doubly(percentage($g-gutter-width / $context));

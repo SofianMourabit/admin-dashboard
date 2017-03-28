@@ -1,5 +1,6 @@
 "use strict";
 
+// Welcome notification
 setTimeout(function() {
   toastr.options = {
     "closeButton": true,

@@ -3,12 +3,16 @@
 // ==========================================================================
 
 .handwriting{
+	top: 70px;
+	left: 250px;
 	font-family: $font-family--handwriting;
 	position: absolute;
-	top: 51px;
-	left: 17px;
 	font-weight: bold;
 	font-size: 1.5em;
 	color: #2a3d45;
 	text-shadow: 1px 1px 1px #eee;
+	@include mq(medium){
+		top: 51px;
+		left: 17px;
+	}
 }

@@ -5,7 +5,11 @@
 // UI
 
 .icon {
-	display: block;
+	display: flex;
+	justify-content: center;
+	@include mq(medium){
+		display: block;
+	}
 	text-align: center;
 	vertical-align: top;
 	color: #abb7b7;
