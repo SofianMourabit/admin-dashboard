@@ -1,0 +1,10 @@
+.sweet-alert {
+  border-radius: 2px;
+  border-top: 10px solid #e7eaec;
+  font-family: $font-family--secondary;
+}
+.sweet-alert button{
+  background-color: $color-primary;
+  box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}

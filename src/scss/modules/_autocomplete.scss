@@ -1,0 +1,20 @@
+.autocomplete {
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 2px 1px 1px #c2d5d8;
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  left: 0px;
+  top: 40px;
+  width: 100%;
+  @include e(item){
+    position: relative;
+    a{
+      width: 100%;
+      display: block;
+      padding: .8em;
+      border-bottom: 1px solid #e7eaec;
+    }
+  }
+}
