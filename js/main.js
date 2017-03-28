@@ -227,7 +227,7 @@ userName.addEventListener('keyup', (e)=>{
   let inputText = e.target.value;
   for(let i=0; i < a.length; i++) {
     let email = a[i].getAttribute("data-val");
-    if (email.includes(inputText) && inputText){
+    if (email.includes(inputText)){
       a[i].parentElement.style.display = "block";
     }else{
       a[i].parentElement.style.display = "none";
