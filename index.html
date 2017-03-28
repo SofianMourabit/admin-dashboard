@@ -48,7 +48,8 @@
     <header class="header">
       <nav class="navbar">
         <form action="#" method="POST" class="form">
-          <input type="text" placeholder="Search FoxyJS" class="form__input" name="top-search" id="top-search">
+          <label class="form__label--hidden" for="top-search">Search FoxyJS:</label>
+          <input type="text" placeholder="Search FoxyJS" class="form__input--search" name="top-search" id="top-search">
         </form>
         <ul class="navbar--right">
           <li id="js__notification" class="dropdown">
@@ -200,47 +201,7 @@
               <h3 class="panel__title--hdln">New Members</h3>
             </div>
             <div class="panel__content">
-              <div class="feed grid">
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile1.jpg">
-                  </div>
-                  <div class="grid__col--10 feed__content">
-                    <small class="right">10/15/15</small>
-                    <strong>Victoria Chambers</strong>
-                    <a href="mailto:victoria.chambers80@example.com" class="">victoria.chambers80@example.com</a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile2.jpg">
-                  </div>
-                  <div class="grid__col--10 feed__content">
-                    <small class="right">10/15/15</small>
-                    <strong>Victoria Chambers</strong>
-                    <a href="mailto:victoria.chambers80@example.com" class="">victoria.chambers80@example.com</a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile3.jpg">
-                  </div>
-                  <div class="grid__col--10 feed__content">
-                    <small class="right">10/15/15</small>
-                    <strong>Victoria Chambers</strong>
-                    <a href="mailto:victoria.chambers80@example.com" class="">victoria.chambers80@example.com</a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile4.jpg">
-                  </div>
-                  <div class="grid__col--10 feed__content">
-                    <small class="right">10/15/15</small>
-                    <strong>Victoria Chambers</strong>
-                    <a href="mailto:victoria.chambers80@example.com" class="">victoria.chambers80@example.com</a>
-                  </div>
-                </div>
+              <div id="js__newMembers" class="feed grid">
               </div>
             </div>
           </div>
@@ -251,71 +212,7 @@
               <h3 class="panel__title--hdln">Recent Activity</h3>
             </div>
             <div class="panel__content">
-              <div class="feed grid">
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile5.jpg">
-                  </div>
-                  <div class="feed__content grid__col--9">
-                    <span>Victoria Chambers commented on FoxyJS's SEO Tips</span><br>
-                    <small class="left">4 hours ago</small>
-                  </div>
-                  <div class="feed__more grid__col--1">
-                    <a href="#">
-                      <svg class="icon__svg">
-                        <use xlink:href="sprite/sprite.svg#icons--next"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile6.jpg">
-                  </div>
-                  <div class="feed__content grid__col--9">
-                    <span>Victoria Chambers commented on FoxyJS's SEO Tips</span><br>
-                    <small class="left">4 hours ago</small>
-                  </div>
-                  <div class="feed__more grid__col--1">
-                    <a href="#">
-                      <svg class="icon__svg">
-                        <use xlink:href="sprite/sprite.svg#icons--next"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile7.jpg">
-                  </div>
-                  <div class="feed__content grid__col--9">
-                    <span>Victoria Chambers commented on FoxyJS's SEO Tips</span><br>
-                    <small class="left">4 hours ago</small>
-                  </div>
-                  <div class="feed__more grid__col--1">
-                    <a href="#">
-                      <svg class="icon__svg">
-                        <use xlink:href="sprite/sprite.svg#icons--next"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="feed__item">
-                  <div class="grid__col--2">
-                    <img alt="Victoria Chamers profile picture" class="img--feed" src="img/profile8.jpg">
-                  </div>
-                  <div class="feed__content grid__col--9">
-                    <span>Victoria Chambers commented on FoxyJS's SEO Tips</span><br>
-                    <small class="left">4 hours ago</small>
-                  </div>
-                  <div class="feed__more grid__col--1">
-                    <a href="#">
-                      <svg class="icon__svg">
-                        <use xlink:href="sprite/sprite.svg#icons--next"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+              <div id="js__activity" class="feed grid">
               </div>
             </div>
           </div>
@@ -396,7 +293,7 @@
                   <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
                   <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
                 </select>
-                <input class="btn--default" type="submit" value="Save">
+                <input class="btn--default" type="submit" value="Save" id="saveSetting">
                 <input class="btn--warning" type="reset" value="Cancel">
               </form>
             </div>
@@ -406,7 +303,8 @@
     </main>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/chart.js"></script>

@@ -18,8 +18,25 @@
 		font-weight: $font-weight--light;
 		letter-spacing: 1px;
 		padding: .5em .6em .5em .2em;
+		min-width: em(250px);
 		&:focus {
 			border-color: $color-primary;
+		}
+		@include m(search){
+			display: none;
+			font-size : em(16px);
+			border-bottom: 2px solid #c2d5d8;
+			color: $color-primary;
+			font-weight: $font-weight--light;
+			letter-spacing: 1px;
+			padding: .5em .6em .5em .2em;
+			min-width: em(250px);
+			&:focus {
+				border-color: $color-primary;
+			}
+			@include mq(medium) {
+				display: block;
+			}
 		}
 		@include m(select){
 			overflow: visible;

@@ -7,7 +7,7 @@
 		display: flex;
 	}
 	@include m(avatar) {
-    height: em(32px);
+    height: em(25px);
 		border-radius: $br--round;
 	}
 	@include m(feed) {
@@ -19,9 +19,6 @@
     text-align: center;
 		position: relative;
     background-color: #c2d5d8;
-		@include mq(medium) {
-
-		}
 	}
   @include m(text) {
     margin: em(16px) em(8px);

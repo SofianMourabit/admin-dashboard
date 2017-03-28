@@ -1,8 +1,8 @@
+'use strict';
 //
 // Sidebar navigation active
 //
 
-'use strict'
 const sidebarWrapper = document.querySelectorAll('#js__sidebar li');
 const dashboardWrapper = document.querySelector('#js__dashboard');
 const membersWrapper = document.querySelector('#js__members');
@@ -47,6 +47,7 @@ settingsWrapper.addEventListener('click', () =>{
 //
 // Notification menu popup
 //
+
 const notificationLink = document.querySelector('.dropdown > a');
 const notificationWrapper = document.querySelector('.dropdown svg');
 const notificationCount = document.querySelectorAll('.dropdown__content li');
@@ -65,16 +66,120 @@ notificationWrapper.addEventListener('click', ()=>{
 // Notification event Listeners
 let i = 1;
 notificationsContent.addEventListener('click', (e)=>{
-  console.log(notificationHidden);
   let li = e.target.parentElement;
-  if(!(notificationHidden === li)){
-  li.style.display = 'none';
+  if(notificationHidden !== li){
+    li.style.display = 'none';
   }
   i++;
-  if (notificationCount.length == i){
+  if (notificationCount.length <= i){
     notificationLink.style.color = "#656a6e";
     notificationsContent.style.display = 'none';
     notificationHidden.style.display = 'flex';
 
   }
-})
+});
+
+//
+// Ajax call to get random users
+//
+
+const url = 'https://randomuser.me/api/?results=8&gender=female&nat=us,fr&inc=name,registered,email,picture';
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.responseType = 'json';
+xhr.onload = function () {
+  if (xhr.readyState === xhr.DONE) {
+    if (xhr.status === 200) {
+      let json = xhr.response.results;
+      let j = 0;
+      for(let i = 0; i < json.length; i++) {
+        let user = json[i];
+        let email = user.email;
+        let firstname = user.name.first;
+        let lastname = user.name.last;
+        let picture = user.picture.thumbnail;
+        let date = user.registered;
+        if(i <= 3){
+          let registrationDate = moment(date).format("DD/MM/YY");
+          let feedHTML = `
+          <div class="feed__item">
+          <div class="grid__col--2">
+          <img alt="${firstname} ${lastname} profile picture" class="img--feed" src="${picture}">
+          </div>
+          <div class="grid__col--10 feed__content">
+          <small class="right">${registrationDate}</small>
+          <strong>${firstname} ${lastname}</strong><br>
+          <a href="mailto:${email}" class="">${email}</a>
+          </div>
+          </div>
+          `;
+          let feed = document.querySelector('#js__newMembers');
+          feed.insertAdjacentHTML('afterbegin',feedHTML);
+        }else{
+          let today = new Date();
+          let time = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() - Math.floor((Math.random() * 24) + 1));
+          let lastActivity = moment(time).fromNow();
+          let activities = ["commented on FoxyJS SEO Tips", "likes the post Facebook's Changes for 2016", "commented on Facebook's Changes for 2016", "posted FoxyJS SEO Tips"];
+          let feedHTML = `
+          <div class="feed__item">
+          <div class="grid__col--2">
+          <img alt="${firstname} ${lastname} profile picture" class="img--feed" src="${picture}">
+          </div>
+          <div class="feed__content grid__col--9">
+          <span>${firstname} ${lastname} ${activities[j]}</span><br>
+          <small class="left">${lastActivity}</small>
+          </div>
+          <div class="feed__more grid__col--1">
+          <a href="#">
+          <svg class="icon__svg">
+          <use xlink:href="sprite/sprite.svg#icons--next"/>
+          </svg>
+          </a>
+          </div>
+          </div>
+          `;
+          let feed = document.querySelector('#js__activity');
+          feed.insertAdjacentHTML('beforeend',feedHTML);
+          j++;
+
+        }
+      }
+    }
+  }
+};
+
+xhr.send(null);
+
+
+//
+// Localstorage leverage
+//
+
+function localStorageSupport() {
+  return (('localStorage' in window) && window['localStorage'] !== null)
+}
+
+if (localStorageSupport()) {
+  let saveSetting = document.querySelector("#saveSetting");
+  saveSetting.addEventListener('click', (e) =>{
+    e.preventDefault();
+    console.log('test');
+    localStorage.setItem('email', document.querySelector("#emailNotification").checked);
+    localStorage.setItem('profile', document.querySelector("#publicProfile").checked);
+    console.log(localStorage.getItem('email'));
+  });
+
+  let emailSetting = eval(localStorage.getItem('email'));
+  let profileSetting = eval(localStorage.getItem('profile'));
+  if(!emailSetting){
+    document.querySelector("#emailNotification").checked = false;
+  }else{
+    document.querySelector("#emailNotification").checked = true;
+  }
+  if(!profileSetting){
+    document.querySelector("#publicProfile").checked = false;
+  }else {
+    document.querySelector("#publicProfile").checked = true;
+  }
+}

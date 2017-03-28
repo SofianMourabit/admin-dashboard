@@ -4,11 +4,14 @@
 
 .navbar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	height: 94px;
 	align-items: center;
+	width: 95%;
+	margin: auto;
 	@include mq(medium) {
 		margin-bottom: 0;
+		justify-content: space-between;
 	}
 	@include m(right) {
 		display: flex;

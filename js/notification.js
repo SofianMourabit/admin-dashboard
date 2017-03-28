@@ -1,3 +1,5 @@
+"use strict";
+
 setTimeout(function() {
   toastr.options = {
     "closeButton": true,

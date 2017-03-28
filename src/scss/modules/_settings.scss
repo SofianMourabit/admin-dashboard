@@ -5,6 +5,10 @@
     padding-top: .8em;
     color: $color-primary;
     align-items: center;
+    justify-content: space-between;
+    @include mq(medium) {
+      justify-content: initial;
+    }
   }
 }
 .onoffswitch{

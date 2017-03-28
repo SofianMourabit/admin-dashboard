@@ -28,24 +28,6 @@
   border-color: $color-primary;
 }
 
-// Headlines
-
-%hdln-prim {
-  color: palette(grey, x-dark);
-  font-weight: $font-weight--light;
-  font-size: em(42px);
-  line-height: (46px/42px);
-  margin-top: 0;
-}
-
-%hdln-sec {
-  color: palette(grey, light);
-  letter-spacing: $letter-space;
-  font-weight: $font-weight--thin;
-  font-size: em(24px);
-  font-family: $font-family--secondary;
-}
-
 // Buttons
 
 %btn {
@@ -62,32 +44,6 @@
   &:active {
     opacity: initial;
   }
-}
-
-%btn-tab {
-  color: $white;
-  text-transform: uppercase;
-  font-size : em(14px);
-  font-weight: $font-weight--medium;
-  transition: opacity $trns-duration;
-  display: block;
-  &:hover {
-    opacity: .75;
-  }
-  &:active {
-    opacity: initial;
-  }
-}
-// Menu link
-
-%menu-link {
-  display: block;
-  padding-top: em(16px);
-  padding-bottom: em(16px);
-  color: $white;
-  text-align: center;
-  text-shadow: 0 1px $color-shadow;
-  font-size: em(18px);
 }
 
 // Icons
