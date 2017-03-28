@@ -79,6 +79,7 @@ let traffic = new Chart(trafficCanvas, {
 });
 // Change charts contents
 trafficJS.addEventListener('click', (e) =>{
+  e.preventDefault();
   traffic.destroy();
   let dataTraffic = eval(e.target.getAttribute('data-name'));
   let dataType = e.target.getAttribute('data-type');

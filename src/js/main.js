@@ -181,7 +181,12 @@ if (localStorageSupport()) {
   let saveSetting = document.querySelector("#saveSetting");
   saveSetting.addEventListener('click', (e) =>{
     e.preventDefault();
-    swal("Success", "User settings succesfully updated", "success");
+    swal({
+      title: "Success",
+      text: "User settings succesfully updated",
+      type: "success",
+      confirmButtonColor: "#2a3d45",
+    });
     localStorage.setItem('email', document.querySelector("#emailNotification").checked);
     localStorage.setItem('profile', document.querySelector("#publicProfile").checked);
   });
@@ -249,8 +254,19 @@ send.addEventListener('click', (e)=>{
   let message = document.querySelector('#msg').value;
   e.preventDefault();
   if(searchbox && message){
-  swal("Success", "message succesfully sent to user", "success");
-}else{
-  swal("Whoops", "Please complete all form fields before submitting", "warning");
-}
+    swal({
+      title: "Success",
+      text: "message succesfully sent to user",
+      type: "success",
+      confirmButtonColor: "#2a3d45",
+    });
+  }else{
+    swal({
+      title: "Whoops",
+      text: "Please complete all form fields before submitting",
+      type: "warning",
+      confirmButtonColor: "#ff784f",
+      confirmButtonText: "Try again",
+    });
+  }
 });
