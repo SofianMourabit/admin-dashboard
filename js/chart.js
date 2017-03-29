@@ -72,7 +72,7 @@ const lineOptions = {
     }]
   }
 };
-let traffic = new Chart(trafficCanvas, {
+let trafficChart = new Chart(trafficCanvas, {
   type: 'line',
   data: weekly,
   options: lineOptions
@@ -80,7 +80,7 @@ let traffic = new Chart(trafficCanvas, {
 // Change charts contents
 trafficJS.addEventListener('click', (e) =>{
   e.preventDefault();
-  traffic.destroy();
+  trafficChart.destroy();
   let dataTraffic = eval(e.target.getAttribute('data-name'));
   let dataType = e.target.getAttribute('data-type');
   let buttons = e.target.parentNode.childNodes;
@@ -127,7 +127,7 @@ const barOptions = {
     }]
   }
 };
-let dailyTraffic = new Chart(dailyTrafficCanvas, {
+let dailyTrafficChart = new Chart(dailyTrafficCanvas, {
   type: 'bar',
   data: dataDailyTraffic,
   options: barOptions
@@ -160,7 +160,7 @@ const doughnutOptions = {
     enabled: false
   },
 };
-let mobileUsers = new Chart(mobileUsersCanvas, {
+let mobileUsersChart = new Chart(mobileUsersCanvas, {
   type: 'doughnut',
   data: dataMobileUsers,
   options: doughnutOptions
