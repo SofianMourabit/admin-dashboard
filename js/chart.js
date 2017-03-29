@@ -88,7 +88,7 @@ trafficJS.addEventListener('click', (e) =>{
     buttons[i].className = "btn__tab--transparent";
   }
   e.target.className = "btn__tab--active";
-  traffic = new Chart(trafficCanvas, {
+  trafficChart = new Chart(trafficCanvas, {
     type: dataType,
     data: dataTraffic,
     options: lineOptions
