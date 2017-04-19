@@ -984,11 +984,13 @@ button {
     color: inherit;
     margin-bottom: 0;
     padding: 15px 15px 7px;
-    min-height: 48px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
+    min-height: 48px; }
+    @media (min-width: 768px) {
+      .panel__title {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }
     .panel__title--hdln {
       margin: 0;
       letter-spacing: 1px;
@@ -1131,8 +1133,7 @@ button {
   line-height: 1.5625em; }
 
 .handwriting {
-  top: 70px;
-  left: 250px;
+  display: none;
   font-family: "Indie Flower", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   font-weight: bold;
@@ -1141,6 +1142,7 @@ button {
   text-shadow: 1px 1px 1px #eee; }
   @media (min-width: 768px) {
     .handwriting {
+      display: block;
       top: 51px;
       left: 17px; } }
 

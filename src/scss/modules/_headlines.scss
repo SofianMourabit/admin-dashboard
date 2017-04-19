@@ -3,8 +3,7 @@
 // ==========================================================================
 
 .handwriting{
-	top: 70px;
-	left: 250px;
+	display: none;
 	font-family: $font-family--handwriting;
 	position: absolute;
 	font-weight: bold;
@@ -12,6 +11,7 @@
 	color: #2a3d45;
 	text-shadow: 1px 1px 1px #eee;
 	@include mq(medium){
+		display: block;
 		top: 51px;
 		left: 17px;
 	}
